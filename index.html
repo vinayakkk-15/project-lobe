@@ -1,0 +1,87 @@
+<html>
+    <body>
+        <div>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <h1>Do you LOVE me?</h1>
+            <img id="kewtImage" src="Minion.jpeg" alt="Kewt Image" style="max-width: 300px; height: auto;">
+            <br/>
+            <br/>
+            <br/>
+            <button id="yesButton">Yes</button>
+            <button id="no">No</button>
+        </div>
+
+        <style>
+            body {
+                background: linear-gradient(to bottom, #d9fb00, #86eb03);
+            }
+            div {
+                text-align: center;
+                vertical-align: middle;
+            }
+            h1 {
+                color: #ff477e;
+            }
+            #yesButton {
+                background-color: #f30ed1;
+                transition: transform 0.3s;
+                margin-right: 10px;
+                width: 120px;
+                font-size: 30px;
+                height: 40px;
+                color: #fff;
+                margin-left: -140px;
+            }
+            #no {
+                position: absolute;
+                background-color: #2804b7;
+                transition: transform 0.3s;
+                margin-left: 10px;
+                width: 120px;
+                font-size: 30px; 
+                height: 40px;
+                color: #000000;
+            }
+        </style>
+        <script>
+            document.getElementById("yesButton").addEventListener("click", showAlert);
+
+            function showAlert() {
+                alert("I love you tooooo soooooo muchhhhhh<3🫂");
+            }
+
+            var yesButton = document.getElementById("yesButton");
+            var no = document.getElementById("no");
+            var kewtImage = document.getElementById("kewtImage");
+
+            var noTexts = ["Why?", "Please lob me", "please kewtie", ":(", "You're breaking my heart", "I'm gonna cry"];
+            var imageSources = ["Ayuda denme plata para comprarme otras botas.jpeg", "( Miserable emoji crying ).jpeg", "c360d825-c581-4187-9624-3cfa5a8da886.jpeg", "me.jpeg"];
+
+            no.addEventListener("click", change);
+
+            function change() {
+                var randomIndex = Math.floor(Math.random() * noTexts.length);
+                var randomText = noTexts[randomIndex];
+                no.innerText = randomText;
+
+                var i = Math.floor(Math.random() * 1000) + 1;
+                var j = Math.floor(Math.random() * 700) + 1;
+                no.style.left = i + "px";
+                no.style.top = j + "px";
+
+                var currentWidth = yesButton.offsetWidth;
+                var currentHeight = yesButton.offsetHeight
+                yesButton.style.width = currentWidth + 30 + "px";
+                yesButton.style.height = currentHeight + 10 + "px";
+
+                var randomImageIndex = Math.floor(Math.random() * imageSources.length);
+                kewtImage.src = imageSources[randomImageIndex];
+            }
+        </script>
+    </body>
+</html>
